@@ -18,16 +18,25 @@
     <meta name="description"
         content="This is a website where JavaScript class and promise is taught with simple language and simple diagrams">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./public/Screenshot 2024-08-12 231917.png">
 </head>
 <style>
+    .element::-webkit-scrollbar {
+        width: 0 !important
+    }
+
     .dark-mode {
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(29, 29, 29);
         color: white;
         border-color: black;
     }
+
+    html {
+        scroll-behavior: smooth;
+    }
 </style>
 
-<body>
+<body class="element">
 
     <!--navbar-->
     <section class="shadow-[0px_3px_10px_0px_#cbd5e0] w-full">
@@ -42,15 +51,21 @@
             </div>
             <div class="flex items-center gap-10">
                 <ul class="xl:flex gap-10 font-fontPop max-sm:flex text-xl font-normal">
-                    <li
-                        class="cursor-pointer hover:text-black hover:bg-slate-200 hover:transition duration-300 ease-in-out p-2 rounded-md px-5">
-                        Class</li>
-                    <li
-                        class="cursor-pointer hover:text-black hover:bg-slate-200 hover:transition duration-300 ease-in-out p-2 rounded-md">
-                        Promise</li>
-                    <li
-                        class="cursor-pointer hover:text-black hover:bg-slate-200 hover:transition duration-300 ease-in-out p-2 rounded-md px-7">
-                        FAQ</li>
+                    <a href="#class">
+                        <li class="cursor-pointer hover:text-black hover:bg-slate-200 hover:transition duration-300 ease-in-out p-2 rounded-md px-5"
+                            href="#class">
+                            Class</li>
+                    </a>
+                    <a href="#promise">
+                        <li
+                            class="cursor-pointer hover:text-black hover:bg-slate-200 hover:transition duration-300 ease-in-out p-2 rounded-md">
+                            Promise</li>
+                    </a>
+                    <a href="#faq">
+                        <li
+                            class="cursor-pointer hover:text-black hover:bg-slate-200 hover:transition duration-300 ease-in-out p-2 rounded-md px-7">
+                            FAQ</li>
+                    </a>
                 </ul>
                 <button id="toggleButton" onclick="document.body.classList.toggle('dark-mode')">
                     <i
@@ -72,8 +87,10 @@
                     you guys faces any problem in understanding after reading this blog then feel free to contact me :)
                 </p>
             </div>
+
+            <!--Classes-->
             <div class="text-lg font-medium">
-                <h1 class="text-5xl font-bold border-b-2 pb-2">JavaScript Class</h1>
+                <h1 id="class" class="text-5xl font-bold border-b-2 pb-2">JavaScript Class</h1>
                 <h2 class="text-3xl font-bold font-fontPop pt-7 pb-3">What Are JavaScript Classes?</h2>
                 <p>Let's understand this with a simple example first-</p><br>
                 <p>Imagine you have a toy factory. In this factory, you want to create lots of the same toy, like toy
@@ -112,19 +129,281 @@
                     </div>
                 </div>
                 <div>
-                    <p class="font-semibold text-xl font-fontPop border-b-2">Let's try to understand the code flow of class
+                    <p class="font-semibold text-xl font-fontPop border-b-2">Let's try to understand the code flow of
+                        class
                         with the help of yesterday's code:</p>
-                        <div class="flex justify-center py-5">
-                            <img src="./public/CLASS2.PNG" alt="control flow of class" class="w-[50vw] rounded-2xl">
+                    <div class="flex justify-center py-5">
+                        <img src="./public/CLASS2.PNG" alt="control flow of class" class="w-[50vw] rounded-2xl">
+                    </div>
+                    <div>
+                        <p class="font-fontPop font-bold text-xl pb-5 border-b-2">Let's understand the steps:</p>
+                        <div class="py-5 pb-10">
+                            <p><b>Step 1: </b> Here I created a new object <i>'rect'</i> which is instance of the
+                                <i>'Rectangle'</i> class. Which have the elements of <i>'Rectangle'</i> class.The
+                                <i>'new'</i> keyword triggers the constructor of the <i>'Rectangle'</i> class.
+                            </p>
+                            <p><b>Step 2: </b>Once the new <i>'Rectangle(2, 4, "red")'</i> is called, the constructor is
+                                executed</p>
+                            <p><b>Step 3: </b>This shows the flow inside the constructor, where each of the parameters
+                                (<i>'width'</i>, <i>'height'</i>, and <i>'color'</i>) is assigned to the properties of
+                                the <i>'rect'</i> object using <i>'this'</i>.</p>
+                            <p><b>Step 4: </b>After the object is created, the next step is calling the <i>'area'</i>
+                                method. The <i>'area'</i> method is invoked on the <i>'rect'</i> object. Here, the
+                                <i>'area'</i> is calculated by multiplying <i>'this.width'</i> by <i>'this.height'</i>.
+                            </p>
+                            <p><b>Step 5: </b>This arrow points to the <i>'paint'</i> method which will print "colour of
+                                Rectangle is:" + <i>'this.colour'</i>. </p>
+                            <p><b>Step 6: </b> The next step is printing the area.</p>
+                            <p><b>Step 7: </b> The next step is printing the colour.</p>
                         </div>
-                        <div>
-                            <p class="font-fontPop font-bold text-xl pb-5 border-b-2">Let's understand the steps:</p>
-                            <p><b>Step 1: </b></p>
-                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!--promises-->
+            <div id="promise" class="text-lg font-medium">
+                <h1 class="text-5xl font-bold border-b-2 pb-2">JavaScript Promises</h1>
+                <div>
+                    <h2 class="text-3xl font-bold font-fontPop pt-7 pb-3">What Are JavaScript Promises?</h2>
+                    <p>Let's understand this with a simple example first-</p><br>
+                    <p>A JavaScript Promise is like a promise you make in real life. Imagine you ask a friend for help,
+                        and they promise to help you later. You don't know when exactly they'll help, but you trust that
+                        they will.
+
+                        In JavaScript, a Promise is a way to handle things that take time, like downloading a file or
+                        getting data from the internet. When you start one of these tasks, you create a Promise.
+                    </p>
+                    <h3 class="pt-5 pb-3 text-2xl font-bold">Definition:</h3>
+                    <p>
+                        In JavaScript, a Promise is an object that represents the ultimate completion (or failure) of an
+                        asynchronous operation and the value it returns. Promises are used to handle asynchronous
+                        activities more effectively than standard callback functions, making it easier to manage code
+                        that runs asynchronously, such as API requests, file I/O, or timers.
+                    </p>
+                </div>
+                <p class="font-bold text-2xl font-fontPop py-5">Let's run this code-</p>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled"
+                    src="https://codepen.io/tsukishima0981/embed/preview/QWXOwLM?default-tab=js%2Cresult&editable=true&theme-id=dark"
+                    frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/tsukishima0981/pen/QWXOwLM">
+                        Untitled</a> by Sanjoy Paul (<a href="https://codepen.io/tsukishima0981">@tsukishima0981</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+                <p>Run this one locally idk why it isn't working...</p>
+                <div class="py-5">
+                    <p class="font-bold text-2xl">What's Happening?</p>
+                    <p>You're making a special function called 'setTimeoutPromisified'.
+                        It takes a number 'ms' (which stands for milliseconds) as input. 1000 milliseconds = 1 second,
+                        so
+                        3000 milliseconds = 3 seconds.
+                        Inside this function, you create a 'Promise'. The Promise waits for the number of milliseconds
+                        you
+                        give it (in this case, 3000 milliseconds).
+                        After the time is up, it says, “Okay, I'm done waiting!” by calling 'resolve'.
+                    </p><br>
+                    <p>
+                        This is another 'function' called 'callback'.
+                        When this 'function' is called, it will print "3 seconds have passed" on the screen.
+                    </p>
+                    <p>
+                        You call the 'setTimeoutPromisified' function with 3000 milliseconds (3 seconds).
+                        The 'Promise' starts waiting for 3 seconds.
+                        After 3 seconds, the 'Promise' is fulfilled, and it calls the 'callback' function.
+                        The 'callback' function runs, and it prints "3 seconds have passed."
+                    </p>
+                </div>
+                <p class="font-semibold text-xl font-fontPop border-b-2">Let's try to understand the code flow of
+                    class:
+                </p>
+                <div class="flex justify-center py-5">
+                    <img src="./public/PROMISE1.PNG" alt="control flow of promise" class="rounded-2xl w-[50vw]">
+                </div>
+                <p class="font-fontPop font-bold text-xl pb-5 border-b-2">Let's understand the steps:</p>
+                <div class="py-5 pb-10">
+                    <p><b>Step 1: </b>the program starts by calling the 'setTimeoutPromisified' function with '3000'
+                        milliseconds as the argument.
+                    </p>
+                    <p><b>Step 2: </b>Here, the function is executed with 'ms' set to '3000'.
+                        A new 'Promise' is created. The 'setTimeout' function is called inside this Promise to wait for
+                        'ms'
+                        milliseconds.
+                    </p>
+                    <p><b>Step 3: </b>The 'setTimeout' function starts its countdown, waiting for '3000' milliseconds.
+                        While waiting, the program doesn't stop.
+                    </p>
+                    <p><b>Step 4: </b>After the '3000' milliseconds are up, 'setTimeout' calls the 'resolve' function.
+                        Which points to '.then(callback)', This tells the Promise that the waiting is over and it's time
+                        to move on to the next step.
+                    </p>
+                    <p><b>Step 5: </b>The 'then' method was attached to the Promise earlier, and now that the Promise is
+                        fulfilled, the 'callback' function is executed. The 'callback' function runs, printing "3
+                        seconds have passed" to the console.</p>
+                </div>
+            </div>
+
+            <P>If you guys are not able to understand something then feel free to contact me</P>
+
+            <!--FAQ-->
+            <div id="faq" class="text-lg font-medium pb-10">
+                <h1 class="text-5xl font-bold border-b-2 pb-2">FAQ</h1>
+                <ul class="mx-auto mt-14 divide-y  shadow shadow-blue-600 rounded-xl w-full">
+                    <li>
+                        <details class="group">
+                            <summary
+                                class="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                                <span>What is this in JavaScript class?</span>
+                            </summary>
+
+                            <article class="px-4 pb-4">
+                                <p>
+                                    In JavaScript classes, this refers to the instance of the class that the method is
+                                    being called on. It allows you to access and manipulate the properties and methods
+                                    of that specific object.
+                                </p>
+                            </article>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="group">
+                            <summary
+                                class="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                                <span>What is constructor in JavaScript class?</span>
+                            </summary>
+
+                            <article class="px-4 pb-4">
+                                <p>
+                                    In JavaScript classes, a constructor is a special method used for creating and
+                                    initializing objects created with that class. </p>
+                            </article>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="group">
+                            <summary
+                                class="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                                <span>What is 'new' in JavaScript class?</span>
+                            </summary>
+
+                            <article class="px-4 pb-4">
+                                <p>
+                                    In JavaScript the new is a keyword which used to create an instance of an object
+                                    from a constructor function or a class. Basically it creates a new empty object.
+                                </p>
+                            </article>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="group">
+                            <summary
+                                class="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                                <span>What is instances in JavaScript class?</span>
+                            </summary>
+
+                            <article class="px-4 pb-4">
+                                <p>
+                                    In JavaScript, an instance is a unique copy of an object created from a class or
+                                    constructor function. It represents a specific realization of that blueprint, with
+                                    its own set of properties and values. </p>
+                            </article>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="group">
+                            <summary
+                                class="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                                <span>What is resolve in JavaScript promise?</span>
+                            </summary>
+
+                            <article class="px-4 pb-4">
+                                <p>
+                                    The resolve() function is used to signal that the asynchronous operation has
+                                    completed successfully. It takes a single argument, which is the value that the
+                                    Promise will be fulfilled with. This value can be anything - data, an object,
+                                    another Promise, etc. Consuming a Promise. </p>
+                            </article>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="group">
+                            <summary
+                                class="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                                <span>What is .then in JavaScript promise?</span>
+                            </summary>
+
+                            <article class="px-4 pb-4">
+                                <p>
+                                    In JavaScript, .then() is a method available on Promise objects. It's used to handle
+                                    the eventual result of an asynchronous operation, whether it's successful (resolved)
+                                    or unsuccessful (rejected). </p>
+                            </article>
+                        </details>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
+    <hr>
 </body>
+<footer class="p-3 px-20 flex justify-between items-center">
+    <div>
+        Made with By ❤️ SANJOY
+    </div>
+    <div class="text-3xl flex gap-6 max-sm:text-2xl max-sm:gap-3 max-sm:ml-8">
+        <a href="https://github.com/SANJOY-PAUL-0981" target="_blank"><i
+                class="fa-brands fa-github duration-200 hover:-translate-y-2 cursor-pointer"></i></a>
+        <a href="https://x.com/SanjoyPaul0981" target="_blank"><i
+                class="fa-brands fa-twitter duration-200 hover:-translate-y-2 cursor-pointer"></i></a>
+        <a href="mailto:paulsanjoy2923@gmail.com" target="_blank"><i
+                class="fa-regular fa-envelope duration-200 hover:-translate-y-2 cursor-pointer"></i></a>
+        <a href="https://www.instagram.com/tf_tsukishima?igsh=MXF2cHI5MXVwZW8wZw==" target="_blank"><i
+                class="fa-brands fa-instagram duration-200 hover:-translate-y-2 cursor-pointer"></i></a>
+        <a href="https://www.linkedin.com/in/sanjoy-paul-b0053122a/" target="_blank"><i
+                class="fa-brands fa-linkedin-in duration-200 hover:-translate-y-2 cursor-pointer"></i></a>
+        <a href="https://discordapp.com/users/lmao_its_tsukishima" target="_blank"><i
+                class="fa-brands fa-discord duration-200 hover:-translate-y-2 cursor-pointer"></i></a>
+    </div>
+</footer>
 
 </html>
